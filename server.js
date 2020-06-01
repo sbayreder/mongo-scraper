@@ -23,7 +23,7 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://Scott:Mlpftw13@ds153123.
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {
-  useMongoClient: true
+  useNewUrlParser: true, useUnifiedTopology:true,
 });
 
 app.get("/notes", function(req, res) {

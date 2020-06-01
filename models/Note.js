@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-
+const Schema= mongoose.Schema;
 
 
 var NoteSchema = new Schema({
