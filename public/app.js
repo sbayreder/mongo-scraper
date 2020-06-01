@@ -2,7 +2,7 @@
 function getJson() {
   $.getJSON("/articles", function(data) {
       $("#savedArticles").hide();
-    
+    console.log(data);
     for (var i = 0; i < data.length; i++) {
       
       $("#articles").append("<div class='panel panel-primary'> <div class='panel-heading'><h3 data-id='" + data[i]._id + "'>" + data[i].title + "<br />" +  "</h3></div>" + "<div class='panel-body'><p>" + data[i].summary + "</p>" + "<br>" +

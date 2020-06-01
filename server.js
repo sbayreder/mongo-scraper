@@ -167,35 +167,24 @@ app.post("/deleteSaved/:id", function(req, res) {
 
 app.get("/scrape", function(req, res) {
     
-    axios.get("https://www.theonion.com/").then(function(response) {
+    axios.get("https://www.theonion.com/latest").then(function(response) {
         
         var $ = cheerio.load(response.data);
-        
         $("article").each(function(i, element) {
-            
+          
             var result = {};
             
-            result.title = $(this)
-                .children("header")
-                .children("h1")
-                .text();
-            result.link = $(this)
-                .children("header")
-                .children("h1")
-                .children("a")
-                .attr("href");
-            result.summary = $(this)
-                .children("div")
-                .next().next()
-                .children("div")
-                .children("p")
-                .text();
+            result.title =$(this).find("h2").text()
                 
-                console.log(result.summary)
+            result.link = $(this).find(".cw4lnv-5").children("a").attr("href")
+                
+            result.summary = $(this).find("h2").text()
+                  
+              console.log(result)
                 
               
            
-            db.Article
+            result.title && result.link && result.summary && db.Article
                 .create(result)
                 .then(function(dbArticle) {
                 console.log(dbArticle);
