@@ -4,6 +4,7 @@
 
 .jumbotron {
     text-align: center;
+    background-color: cornflowerblue;
 }
 
 img{
@@ -13,4 +14,17 @@ img{
     overflow: hidden;
     height: auto;
     width: 100%;
+}
+
+body{
+    background-color: aquamarine;
+}
+
+h5{
+    font-size: 40px;
+}
+
+h1{
+    font-family: cursive;
+    font-weight: bold;
 }
