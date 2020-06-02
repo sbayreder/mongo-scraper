@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var logger = require("morgan");
 var mongoose = require("mongoose");
 
 var axios = require("axios");
@@ -11,8 +10,6 @@ var db = require("./models");
 var PORT = process.env.PORT || 8080;
 
 var app = express();
-
-app.use(logger("dev"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
