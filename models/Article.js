@@ -18,7 +18,10 @@ var ArticleSchema = new Schema({
       required: true
     },
   
- 
+    clock: {
+      type: String,
+      required: true
+    },
  
   note: [ {
     type: Schema.Types.ObjectId,

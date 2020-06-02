@@ -5,3 +5,12 @@
 .jumbotron {
     text-align: center;
 }
+
+img{
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+}
